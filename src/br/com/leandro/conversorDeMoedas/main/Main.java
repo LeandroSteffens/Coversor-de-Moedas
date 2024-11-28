@@ -1,5 +1,3 @@
-package br.com.leandro.conversorDeMoedas.main;
-
 import br.com.leandro.conversorDeMoedas.model.ConsultaAPI;
 import br.com.leandro.conversorDeMoedas.model.Conversao;
 
@@ -15,7 +13,7 @@ public class Main {
         String moedaDestino = "";
         ConsultaAPI consulta = new ConsultaAPI();
 
-        while(escolha != 7){
+        while (escolha != 7) {
             System.out.println("*******************");
             System.out.println("1) USD -> BRL");
             System.out.println("2) BRL -> USD");
@@ -26,66 +24,75 @@ public class Main {
             System.out.println("7) SAIR");
             System.out.println("*******************");
             System.out.println("Digite uma opção: ");
-            escolha = scanner.nextInt();
-        
-            switch (escolha){
-                case 1:
-                    System.out.println("Digite o valor do USD: ");
-                    valor = scanner.nextDouble();
-                    moedaOrigem = "USD";
-                    moedaDestino = "BRL";
-                    Conversao novaConversao = consulta.conversao1(moedaOrigem, moedaDestino, valor);
-                    System.out.println("Valor após conversão: " + novaConversao + moedaDestino);
-                    break;
-                case 2:
-                    System.out.println("Digite o valor do BRL: ");
-                    valor = scanner.nextDouble();
-                    moedaOrigem = "BRL";
-                    moedaDestino = "USD";
-                    Conversao novaConversao1 = consulta.conversao1(moedaOrigem, moedaDestino, valor);
-                    System.out.println("Valor após conversão: " + novaConversao1 + moedaDestino);
-                    break;
-                case 3:
-                    System.out.println("Digite o valor do USD: ");
-                    valor = scanner.nextDouble();
-                    moedaOrigem = "USD";
-                    moedaDestino = "EUR";
-                    Conversao novaConversao2 = consulta.conversao1(moedaOrigem, moedaDestino, valor);
-                    System.out.println("Valor após conversão: " + novaConversao2 + moedaDestino);
-                    break;
-                case 4:
-                    System.out.println("Digite o valor do EUR: ");
-                    valor = scanner.nextDouble();
-                    moedaOrigem = "EUR";
-                    moedaDestino = "USD";
-                    Conversao novaConversao3 = consulta.conversao1(moedaOrigem, moedaDestino, valor);
-                    System.out.println("Valor após conversão: " + novaConversao3 + moedaDestino);
-                    break;
-                case 5:
-                    System.out.println("Digite o valor do USD: ");
-                    valor = scanner.nextDouble();
-                    moedaOrigem = "USD";
-                    moedaDestino = "CNY";
-                    Conversao novaConversao4 = consulta.conversao1(moedaOrigem, moedaDestino, valor);
-                    System.out.println("Valor após conversão: " + novaConversao4 + moedaDestino);
-                    break;
-                case 6:
-                    System.out.println("Digite o valor do CNY: ");
-                    valor = scanner.nextDouble();
-                    moedaOrigem = "CNY";
-                    moedaDestino = "USD";
-                    Conversao novaConversao5 = consulta.conversao1(moedaOrigem, moedaDestino, valor);
-                    System.out.println("Valor após conversão: " + novaConversao5 + moedaDestino);
-                    break;
-                case 7:
-                    System.out.println("Finalizando o programa!");
-                    break;
-                default:
-                    System.out.println("Entrada inválida!");
-                    main();
-                    break;
-            }
+            
+            try {
+                escolha = scanner.nextInt();
 
+                switch (escolha) {
+                    case 1:
+                        System.out.println("Digite o valor do USD: ");
+                        valor = scanner.nextDouble();
+                        moedaOrigem = "USD";
+                        moedaDestino = "BRL";
+                        exibirResultado(consulta, moedaOrigem, moedaDestino, valor);
+                        break;
+                    case 2:
+                        System.out.println("Digite o valor do BRL: ");
+                        valor = scanner.nextDouble();
+                        moedaOrigem = "BRL";
+                        moedaDestino = "USD";
+                        exibirResultado(consulta, moedaOrigem, moedaDestino, valor);
+                        break;
+                    case 3:
+                        System.out.println("Digite o valor do USD: ");
+                        valor = scanner.nextDouble();
+                        moedaOrigem = "USD";
+                        moedaDestino = "EUR";
+                        exibirResultado(consulta, moedaOrigem, moedaDestino, valor);
+                        break;
+                    case 4:
+                        System.out.println("Digite o valor do EUR: ");
+                        valor = scanner.nextDouble();
+                        moedaOrigem = "EUR";
+                        moedaDestino = "USD";
+                        exibirResultado(consulta, moedaOrigem, moedaDestino, valor);
+                        break;
+                    case 5:
+                        System.out.println("Digite o valor do USD: ");
+                        valor = scanner.nextDouble();
+                        moedaOrigem = "USD";
+                        moedaDestino = "CNY";
+                        exibirResultado(consulta, moedaOrigem, moedaDestino, valor);
+                        break;
+                    case 6:
+                        System.out.println("Digite o valor do CNY: ");
+                        valor = scanner.nextDouble();
+                        moedaOrigem = "CNY";
+                        moedaDestino = "USD";
+                        exibirResultado(consulta, moedaOrigem, moedaDestino, valor);
+                        break;
+                    case 7:
+                        System.out.println("Finalizando o programa!");
+                        break;
+                    default:
+                        System.out.println("Entrada inválida!");
+                        break;
+                }
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Entrada inválida! Por favor, insira um número.");
+                scanner.nextLine(); // Limpa o buffer
+            } catch (Exception e) {
+                System.out.println("Ocorreu um erro: " + e.getMessage());
+            }
+        }
+    }
+
+    private static void exibirResultado(ConsultaAPI consulta, String moedaOrigem, String moedaDestino, double valor) {
+        try {
+            Conversao novaConversao = consulta.conversao1(moedaOrigem, moedaDestino, valor);
+            System.out.println("Valor após conversão: " + novaConversao + " " + moedaDestino);
+        } catch (Exception e) {
+            System.out.println("Erro ao realizar a conversão: " + e.getMessage());
         }
     }
 }
