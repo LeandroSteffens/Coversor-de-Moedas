@@ -26,12 +26,13 @@ USD -> EUR;
 EUR -> USD;
 USD -> CNY;
 CNY -> USD.
+
 Obtenção de valores em tempo real utilizando a API Exchange Rate API.
 Interface simples e intuitiva via terminal.
+
 Demonstração:
 Ao executar o programa, o usuário verá o seguinte menu no terminal:
 
-Copiar código
 *******************
 1) USD -> BRL
 2) BRL -> USD
@@ -57,6 +58,7 @@ Bibliotecas:
 Gson para manipulação de JSON.
 HttpClient para requisições HTTP.
 API Externa: Exchange Rate API.
+
 👥 Pessoas Contribuidoras
 Até o momento, não há contribuições externas para este projeto.
 
