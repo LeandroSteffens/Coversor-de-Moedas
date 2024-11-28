@@ -1,17 +1,18 @@
 🌍 Conversor de Moedas
 
 
-📋 Índice
-Descrição do Projeto
-Status do Projeto
-Funcionalidades e Demonstração da Aplicação
-Acesso ao Projeto
-Tecnologias Utilizadas
-Pessoas Contribuidoras
-Pessoas Desenvolvedoras do Projeto
+📋 Índice:
+
+Descrição do Projeto;
+Status do Projeto;
+Funcionalidades e Demonstração da Aplicação;
+Acesso ao Projeto;
+Tecnologias Utilizadas;
+Pessoas Contribuidoras;
+Pessoas Desenvolvedoras do Projeto;
 
 🖋️ Descrição do Projeto
-O Conversor de Moedas é uma aplicação desenvolvida em Java que permite converter valores entre diferentes moedas utilizando dados atualizados de uma API de taxas de câmbio. Com uma interface de console interativa, o usuário pode escolher entre várias opções de conversão, como de USD para BRL, EUR para USD, e outras.
+O Conversor de Moedas é uma aplicação desenvolvida em Java que permite converter valores entre diferentes moedas utilizando dados atualizados de uma API de taxas de câmbio. Com uma interface de console interativa, o usuário pode escolher entre várias opções de conversão, como de USD para BRL, EUR para USD, e outras. Esse desafio foi proposto pela Alura no projeto ONE Next Education da Oracle.
 
 ✅ Status do Projeto
 ✔️ Projeto Concluído
