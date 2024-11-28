@@ -19,18 +19,17 @@ O Conversor de Moedas é uma aplicação desenvolvida em Java que permite conver
 ⚙️ Funcionalidades e Demonstração da Aplicação
 Funcionalidades:
 Conversão entre as seguintes moedas:
-USD -> BRL
-BRL -> USD
-USD -> EUR
-EUR -> USD
-USD -> CNY
-CNY -> USD
+USD -> BRL;
+BRL -> USD;
+USD -> EUR;
+EUR -> USD;
+USD -> CNY;
+CNY -> USD.
 Obtenção de valores em tempo real utilizando a API Exchange Rate API.
 Interface simples e intuitiva via terminal.
 Demonstração:
 Ao executar o programa, o usuário verá o seguinte menu no terminal:
 
-markdown
 Copiar código
 *******************
 1) USD -> BRL
@@ -47,7 +46,6 @@ Após selecionar uma opção, o programa solicita o valor a ser convertido e exi
 🔗 Acesso ao Projeto
 Você pode acessar os arquivos do projeto clonando o repositório:
 
-bash
 Copiar código
 git clone https://github.com/leandrosteffens/conversor-de-moedas.git
 Após clonar, basta abrir o projeto em sua IDE de preferência e executar a classe Main.
